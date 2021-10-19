@@ -8,142 +8,131 @@ namespace UnitTestProject1
     public class UnitTest1
     {
         [TestMethod]
-        [DataRow("varunlad5@gmail.com")]
-        [DataRow("varunlad19@gmail.com")]
-        [DataRow("varunbjscjbs9@gmail.com")]
-        public void ValidatingHappy(string mail)//Validating for Valid EmailAddress
+        public void ValidatingHappy()//Validating for Valid EmailAddress
         {
             //AAA Methology
 
             //Arrange
             string excepted = "happy";
-            Regex058assignment EmailValidation = new Regex058assignment();
+            string input = "varunlad5@gmail.com";
+            Regex058assignment EmailValidation = new Regex058assignment(input);
 
             //ACT
-            string actual = EmailValidation.EmailValidation(mail);
+            string actual = EmailValidation.EmailValidation();
 
             //ASSERT
             Assert.AreEqual(excepted, actual); ;//Checking wether my actual rasult and Excepted Results Matches or not
         }
         [TestMethod]
-        [DataRow("varun?>>SDAce.com")]
-        [DataRow("varunlad1nckjbnl.com")]
-        [DataRow("varunbjscwqcs9@gmail...?com")]
-        public void ValidatingSadEmail(string mail) //Validating for invalid EmailAddress
+        public void ValidatingSadEmail() //Validating for invalid EmailAddress
         {
             //AAA Methology
 
             //Arrange
             string excepted = "sad";
-            Regex058assignment EmailValidation = new Regex058assignment(); //Creating a object and passing a message
+            string input = "varun??d5@gmail.com";
+            Regex058assignment EmailValidation = new Regex058assignment(input); ;//Creating a object and passing a message
 
             //ACT
-            string actual = EmailValidation.EmailValidation(mail);
+            string actual = EmailValidation.EmailValidation();
 
             //ASSERT
             Assert.AreEqual(excepted, actual); ;//Checking wether my actual rasult and Excepted Results Matches or not
         }
         [TestMethod]
-        [DataRow("Varun")]
-        [DataRow("Chirag")]
-        [DataRow("Anuraj")]
-        public void ValidatingHappyName(string name)//Valid Name
+
+        public void ValidatingHappyName()//Valid Name
         {
             //AAA Methology
 
             //Arrange
             string excepted = "happy";
-            Regex058assignment EmailValidation = new Regex058assignment();
+            string input = "Varun";
+            Regex058assignment EmailValidation = new Regex058assignment(input);
 
             //ACT
-            string actual = EmailValidation.NameValidation(name);
+            string actual = EmailValidation.NameValidation();
 
             //ASSERT
             Assert.AreEqual(excepted, actual); ;//Checking wether my actual rasult and Excepted Results Matches or not
         }
         [TestMethod]
-        [DataRow("varun?")]
-        [DataRow("Chira?SF/")]
-        [DataRow("anu..--raj")]
-        public void ValidatingSadName(string name)//Valid Name
+        public void ValidatingSadName()//Invalid Nmae
         {
             //AAA Methology
+
             //Arrange
             string excepted = "sad";
-            Regex058assignment EmailValidation = new Regex058assignment();
+            string input = "varun?";
+            Regex058assignment EmailValidation = new Regex058assignment(input); ;//Creating a object and passing a message
 
             //ACT
-            string actual = EmailValidation.NameValidation(name);
+            string actual = EmailValidation.NameValidation();
 
             //ASSERT
             Assert.AreEqual(excepted, actual); ;//Checking wether my actual rasult and Excepted Results Matches or not
         }
         [TestMethod]
-        [DataRow("91 9834978189")]
-        [DataRow("91 8805919424")]
-        [DataRow("91 9921497032")]
-        public void ValidatingHappyMobile(string number)//Valid Mobile Number
+
+        public void ValidatingHappyMobile()//Valid Mobile Number
         {
             //AAA Methology
 
             //Arrange
             string excepted = "happy";
-            Regex058assignment EmailValidation = new Regex058assignment();
+            string input = "91 9834978189";
+            Regex058assignment EmailValidation = new Regex058assignment(input);
 
             //ACT
-            string actual = EmailValidation.MobileNumberValidation(number);
+            string actual = EmailValidation.MobileNumberValidation();
 
             //ASSERT
             Assert.AreEqual(excepted, actual); ;//Checking wether my actual rasult and Excepted Results Matches or not
         }
         [TestMethod]
-        [DataRow("91 98349789")]
-        [DataRow("91 880591424")]
-        [DataRow("91 997032")]
-        public void ValidatingSadMobile(string number)//Valid Mobile Number
+        public void ValidatingSadMobile()//Invalid Mobile Number
         {
             //AAA Methology
 
             //Arrange
             string excepted = "sad";
-            Regex058assignment EmailValidation = new Regex058assignment();
+            string input = "varun?";
+            Regex058assignment EmailValidation = new Regex058assignment(input); ;//Creating a object and passing a message
 
             //ACT
-            string actual = EmailValidation.MobileNumberValidation(number);
+            string actual = EmailValidation.MobileNumberValidation();
 
             //ASSERT
             Assert.AreEqual(excepted, actual); ;//Checking wether my actual rasult and Excepted Results Matches or not
         }
-        [TestMethod]
-        [DataRow("91kxhk@123")]
-        [DataRow("varun@123")]
-        [DataRow("123@456")]
-        public void ValidatingHappyPassword(string password)//Validating Correct PassWord
+
+        public void ValidatingHappyPassword()//Validating Correct PassWord
         {
             //AAA Methology
+
             //Arrange
             string excepted = "happy";
-            Regex058assignment EmailValidation = new Regex058assignment();
+            string input = "Sa1_1ksHawsfn";
+            Regex058assignment EmailValidation = new Regex058assignment(input);
 
             //ACT
-            string actual = EmailValidation.PassWordValidation(password);
+            string actual = EmailValidation.PassWordValidation();
 
             //ASSERT
             Assert.AreEqual(excepted, actual); ;//Checking wether my actual rasult and Excepted Results Matches or not
         }
         [TestMethod]
-        [DataRow("91kxhk123")]
-        [DataRow("varun123")]
-        [DataRow("12356")]
-        public void ValidatingSadPassword(string password)//Validating Correct PassWord
+        public void ValidatingSadPassWord()//Validating Incorrect PassWord
         {
             //AAA Methology
+
             //Arrange
             string excepted = "sad";
-            Regex058assignment EmailValidation = new Regex058assignment();
+            string input = "9198scv8189";
+            Regex058assignment EmailValidation = new Regex058assignment(input); ;//Creating a object and passing a message
 
             //ACT
-            string actual = EmailValidation.PassWordValidation(password);
+            string actual = EmailValidation.PassWordValidation();
 
             //ASSERT
             Assert.AreEqual(excepted, actual); ;//Checking wether my actual rasult and Excepted Results Matches or not

@@ -11,9 +11,9 @@ namespace RegexAssignment
     {
         static void Main(string[] args)
         {
-            string[] inputs = { "abc@yahoo.com" };
-            Regex058assignment name = new Regex058assignment();
-            //name.EmailValidation(inputs);
+            string inputs = "abc@yahoo.com";
+            Regex058assignment name = new Regex058assignment(inputs);
+            name.EmailValidation();
             Console.ReadLine();
         }
     }
