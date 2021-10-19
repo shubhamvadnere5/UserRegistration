@@ -11,9 +11,9 @@ namespace UserRegistration
 /// </summary>
     class UserRegistrationRegex
     {
-        string pattern = "^[a-zA-Z0-9]{1,}[0-9]{1,}[a-zA-Z0-9]*$";
+        string pattern = "^[a-zA-Z0-9]{1,}[@&*?_-]{1}[a-zA-Z0-9]*$";
         //writing the valid pattern
-        string[] inputs = { "xvdfsdvg42vsfdb", "9198scv8189", "poojadhhshdfb224114FDIUG", "Sh04ksHawsfn", "56 740921740", "Bfjx", "abc@1.com", "Vascrun" };//Validating some Example
+        string[] inputs = { "Creta&Ertiga", "9198scv8189", "Shubham&1234", "Pulsar@200NS", "56 740921740", "Bfjx", "abc@1.com", "Shubh" };//Validating some Example
 
 
         /// <summary>
