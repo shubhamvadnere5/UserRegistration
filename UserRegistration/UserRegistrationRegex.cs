@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 
 namespace UserRegistration
 {/// <summary>
-/// UC1 creating regular expression for validating user first name
+/// UC3 creating regular expression for validating Email
 /// </summary>
     class UserRegistrationRegex
     {
+        
+        string pattern = "^[a-zA-Z0-9]+[.]*[a-zA-Z0-9]*@[a-zA-Z0-9]{1,10}[.]*[a-zA-Z]{2,10}[.]*[a-zA-Z]*$";
         //writing the valid pattern
-        string pattern = "^[A-Z]{1}[a-z]{3,}$";
-        string[] inputs = { "vadne", "Vad?re", "Vadner96", "Vadnere", "Shubhamvad@gmail.com", "CRETA", "sv" };//Validating some Example
+        string[] inputs = { "Shubh Vad", "Shubh?ad", "abc.xyz@bl.co.in", "shubhamvadnere5@gmail.com", "DHVSJK@.com", "Bfghjbjsb Gkajx", "abc@1.com", "Shubham" };//Validating some Example
 
 
         /// <summary>
@@ -21,24 +22,27 @@ namespace UserRegistration
         /// </summary>
         public void Validation()
         {
-            Regex regex1 = new Regex(pattern);
-            Console.WriteLine("Validating Last name: ");
-            ItarateLoop(inputs, regex1);
+            Regex regrex1 = new Regex(pattern);
+            Console.WriteLine("Validating User Email Address: ");
+            ItarateLoop(inputs, regrex1);
         }
-        public void ItarateLoop(string[] arr, Regex regex1)
+        public void ItarateLoop(string[] arr, Regex regrex1)
         {
             for (int i = 0; i < arr.Length; i++)//validation Loop
             {
-                bool result = regex1.IsMatch(arr[i]);
+                bool result = regrex1.IsMatch(arr[i]);
                 if (result)
                 {
-                    Console.WriteLine(arr[i] + ": is-->" + "Valid");
+                    Console.WriteLine(arr[i] + " It is --->" + "Valid");
                 }
                 else
                 {
-                    Console.WriteLine(arr[i] + ": is-->" + "Invalid");
+                    Console.WriteLine(arr[i] + " It is --->" + "Invalid");
                 }
             }
         }
+
+
+
     }
 }
