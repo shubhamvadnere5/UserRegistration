@@ -8,298 +8,145 @@ namespace UnitTestProject1
     public class UnitTest1
     {
         [TestMethod]
-        public void ValidatingHappy()//Validating for Valid EmailAddress
+        [DataRow("varunlad5@gmail.com")]
+        [DataRow("varunlad19@gmail.com")]
+        [DataRow("varunbjscjbs9@gmail.com")]
+        public void ValidatingHappy(string mail)//Validating for Valid EmailAddress
         {
             //AAA Methology
 
             //Arrange
             string excepted = "happy";
-            string input = "varunlad5@gmail.com";
-            Regex058assignment EmailValidation = new Regex058assignment(input);
+            Regex058assignment EmailValidation = new Regex058assignment();
 
             //ACT
-            string actual = EmailValidation.EmailValidation();
+            string actual = EmailValidation.EmailValidation(mail);
 
             //ASSERT
             Assert.AreEqual(excepted, actual); ;//Checking wether my actual rasult and Excepted Results Matches or not
         }
-
         [TestMethod]
-        public void ValidatingSadEmail() //Validating for invalid EmailAddress
+        [DataRow("varun?>>SDAce.com")]
+        [DataRow("varunlad1nckjbnl.com")]
+        [DataRow("varunbjscwqcs9@gmail...?com")]
+        public void ValidatingSadEmail(string mail) //Validating for invalid EmailAddress
         {
             //AAA Methology
 
             //Arrange
             string excepted = "sad";
-            string input = "varun??d5@gmail.com";
-            Regex058assignment EmailValidation = new Regex058assignment(input); ;//Creating a object and passing a message
+            Regex058assignment EmailValidation = new Regex058assignment(); //Creating a object and passing a message
 
             //ACT
-            string actual = EmailValidation.EmailValidation();
+            string actual = EmailValidation.EmailValidation(mail);
 
             //ASSERT
             Assert.AreEqual(excepted, actual); ;//Checking wether my actual rasult and Excepted Results Matches or not
         }
         [TestMethod]
-        [TestCategory("Customexception")]
-        public void GivenNullShouldReturnCustomNullExceptionEmailValidation()
-        {
-            //AAA Methology
-
-            //Arrange
-            string excepted = "Message should not be null";
-            Regex058assignment EmailValidation = new Regex058assignment(null);//Passing an Null Message To call Null_Type_Exception
-            try
-            {
-                //ACT
-                string actual = EmailValidation.EmailValidation();
-            }
-            catch (CustomException ex)
-            {
-                //ASSERT
-                Assert.AreEqual(excepted, ex.Message);//Checking wether my actual result and Excepted Results Matches or not
-            }
-        }
-        [TestMethod]
-        [TestCategory("Customexception")]
-        public void GivenEmptyShouldReturnCustomEmailEmptyException()
-        {
-            //AAA Methology
-
-            //Arrange
-            string input = string.Empty;
-            string excepted = "Message should not be empty";
-            Regex058assignment EmailValidation = new Regex058assignment(input);//Passing an Empty Message  To call Empty_Type_Exception
-            try
-            {
-                //ACT
-                string actual = EmailValidation.EmailValidation();
-            }
-            catch (CustomException ex)
-            {
-                //ASSERT
-                Assert.AreEqual(excepted, ex.Message);//Checking wether my actual result and Excepted Results Matches or not
-            }
-        }
-
-        [TestMethod]
-
-        public void ValidatingHappyName()//Valid Name
+        [DataRow("Varun")]
+        [DataRow("Chirag")]
+        [DataRow("Anuraj")]
+        public void ValidatingHappyName(string name)//Valid Name
         {
             //AAA Methology
 
             //Arrange
             string excepted = "happy";
-            string input = "Varun";
-            Regex058assignment EmailValidation = new Regex058assignment(input);
+            Regex058assignment EmailValidation = new Regex058assignment();
 
             //ACT
-            string actual = EmailValidation.NameValidation();
+            string actual = EmailValidation.NameValidation(name);
 
             //ASSERT
             Assert.AreEqual(excepted, actual); ;//Checking wether my actual rasult and Excepted Results Matches or not
         }
         [TestMethod]
-        public void ValidatingSadName()//Invalid Nmae
+        [DataRow("varun?")]
+        [DataRow("Chira?SF/")]
+        [DataRow("anu..--raj")]
+        public void ValidatingSadName(string name)//Valid Name
         {
             //AAA Methology
-
             //Arrange
             string excepted = "sad";
-            string input = "varun?";
-            Regex058assignment EmailValidation = new Regex058assignment(input); ;//Creating a object and passing a message
+            Regex058assignment EmailValidation = new Regex058assignment();
 
             //ACT
-            string actual = EmailValidation.NameValidation();
+            string actual = EmailValidation.NameValidation(name);
 
             //ASSERT
             Assert.AreEqual(excepted, actual); ;//Checking wether my actual rasult and Excepted Results Matches or not
         }
         [TestMethod]
-        [TestCategory("Customexception")]
-        public void GivenNullShouldReturnCustomNullExceptionNameValidation()
-        {
-            //AAA Methology
-
-            //Arrange
-            string excepted = "Message should not be null";
-            Regex058assignment EmailValidation = new Regex058assignment(null);//Passing an Null Message To call Null_Type_Exception
-            try
-            {
-                //ACT
-                string actual = EmailValidation.NameValidation();
-            }
-            catch (CustomException ex)
-            {
-                //ASSERT
-                Assert.AreEqual(excepted, ex.Message);//Checking wether my actual result and Excepted Results Matches or not
-            }
-        }
-        [TestMethod]
-        [TestCategory("Customexception")]
-        public void GivenEmptyShouldReturnCustomNmaeEmptyException()
-        {
-            //AAA Methology
-
-            //Arrange
-            string excepted = "Message should not be empty";
-            Regex058assignment EmailValidation = new Regex058assignment(string.Empty);//Passing an Empty Message  To call Empty_Type_Exception
-            try
-            {
-                //ACT
-                string actual = EmailValidation.NameValidation();
-            }
-            catch (CustomException ex)
-            {
-                //ASSERT
-                Assert.AreEqual(excepted, ex.Message);//Checking wether my actual result and Excepted Results Matches or not
-            }
-        }
-        [TestMethod]
-        public void ValidatingHappyMobile()//Valid Mobile Number
+        [DataRow("91 9834978189")]
+        [DataRow("91 8805919424")]
+        [DataRow("91 9921497032")]
+        public void ValidatingHappyMobile(string number)//Valid Mobile Number
         {
             //AAA Methology
 
             //Arrange
             string excepted = "happy";
-            string input = "91 9834978189";
-            Regex058assignment EmailValidation = new Regex058assignment(input);
+            Regex058assignment EmailValidation = new Regex058assignment();
 
             //ACT
-            string actual = EmailValidation.MobileNumberValidation();
+            string actual = EmailValidation.MobileNumberValidation(number);
 
             //ASSERT
             Assert.AreEqual(excepted, actual); ;//Checking wether my actual rasult and Excepted Results Matches or not
         }
         [TestMethod]
-        public void ValidatingSadMobile()//Invalid Mobile Number
+        [DataRow("91 98349789")]
+        [DataRow("91 880591424")]
+        [DataRow("91 997032")]
+        public void ValidatingSadMobile(string number)//Valid Mobile Number
         {
             //AAA Methology
 
             //Arrange
             string excepted = "sad";
-            string input = "varun?";
-            Regex058assignment EmailValidation = new Regex058assignment(input); ;//Creating a object and passing a message
+            Regex058assignment EmailValidation = new Regex058assignment();
 
             //ACT
-            string actual = EmailValidation.MobileNumberValidation();
+            string actual = EmailValidation.MobileNumberValidation(number);
 
             //ASSERT
             Assert.AreEqual(excepted, actual); ;//Checking wether my actual rasult and Excepted Results Matches or not
         }
         [TestMethod]
-        [TestCategory("Customexception")]
-        public void GivenNullShouldReturnCustomNullExceptionMobileValidation()
+        [DataRow("91kxhk@123")]
+        [DataRow("varun@123")]
+        [DataRow("123@456")]
+        public void ValidatingHappyPassword(string password)//Validating Correct PassWord
         {
             //AAA Methology
-
-            //Arrange
-            string excepted = "Message should not be null";
-            Regex058assignment EmailValidation = new Regex058assignment(null);//Passing an Null Message To call Null_Type_Exception
-            try
-            {
-                //ACT
-                string actual = EmailValidation.MobileNumberValidation();
-            }
-            catch (CustomException ex)
-            {
-                //ASSERT
-                Assert.AreEqual(excepted, ex.Message);//Checking wether my actual result and Excepted Results Matches or not
-            }
-        }
-        [TestMethod]
-        [TestCategory("Customexception")]
-        public void GivenEmptyShouldReturnCustomMobileNumberEmptyException()
-        {
-            //AAA Methology
-
-            //Arrange
-            string excepted = "Message should not be empty";
-            Regex058assignment EmailValidation = new Regex058assignment(string.Empty);//Passing an Empty Message  To call Empty_Type_Exception
-            try
-            {
-                //ACT
-                string actual = EmailValidation.MobileNumberValidation();
-            }
-            catch (CustomException ex)
-            {
-                //ASSERT
-                Assert.AreEqual(excepted, ex.Message);//Checking wether my actual result and Excepted Results Matches or not
-            }
-        }
-
-        [TestMethod]
-        public void ValidatingHappyPassword()//Validating Correct PassWord
-        {
-            //AAA Methology
-
             //Arrange
             string excepted = "happy";
-            string input = "Sa1_1ksHawsfn";
-            Regex058assignment EmailValidation = new Regex058assignment(input);
+            Regex058assignment EmailValidation = new Regex058assignment();
 
             //ACT
-            string actual = EmailValidation.PassWordValidation();
+            string actual = EmailValidation.PassWordValidation(password);
 
             //ASSERT
             Assert.AreEqual(excepted, actual); ;//Checking wether my actual rasult and Excepted Results Matches or not
         }
         [TestMethod]
-        public void ValidatingSadPassWord()//Validating Incorrect PassWord
+        [DataRow("91kxhk123")]
+        [DataRow("varun123")]
+        [DataRow("12356")]
+        public void ValidatingSadPassword(string password)//Validating Correct PassWord
         {
             //AAA Methology
-
             //Arrange
             string excepted = "sad";
-            string input = "9198scv8189";
-            Regex058assignment EmailValidation = new Regex058assignment(input); ;//Creating a object and passing a message
+            Regex058assignment EmailValidation = new Regex058assignment();
 
             //ACT
-            string actual = EmailValidation.PassWordValidation();
+            string actual = EmailValidation.PassWordValidation(password);
 
             //ASSERT
             Assert.AreEqual(excepted, actual); ;//Checking wether my actual rasult and Excepted Results Matches or not
         }
-        [TestMethod]
-        [TestCategory("Customexception")]
-        public void GivenNullShouldReturnCustomNullExceptionPasswordValidation()
-        {
-            //AAA Methology
-
-            //Arrange
-            string excepted = "Message should not be null";
-            Regex058assignment EmailValidation = new Regex058assignment(null);//Passing an Null Message To call Null_Type_Exception
-            try
-            {
-                //ACT
-                string actual = EmailValidation.PassWordValidation();
-            }
-            catch (CustomException ex)
-            {
-                //ASSERT
-                Assert.AreEqual(excepted, ex.Message);//Checking wether my actual result and Excepted Results Matches or not
-            }
-        }
-        [TestMethod]
-        [TestCategory("Customexception")]
-        public void GivenEmptyShouldReturnCustomPassWordEmptyException()
-        {
-            //AAA Methology
-
-            //Arrange
-            string excepted = "Message should not be empty";
-            Regex058assignment EmailValidation = new Regex058assignment(string.Empty);//Passing an Empty Message  To call Empty_Type_Exception
-            try
-            {
-                //ACT
-                string actual = EmailValidation.PassWordValidation();
-            }
-            catch (CustomException ex)
-            {
-                //ASSERT
-                Assert.AreEqual(excepted, ex.Message);//Checking wether my actual result and Excepted Results Matches or not
-            }
-        }
-
     }
 }

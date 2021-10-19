@@ -16,156 +16,105 @@ namespace RegexAssignment
         /// <summary>
         /// Validation this instance.
         /// </summary>
-        /// 
-        public string inputs;
-
-        public Regex058assignment(string inputs)
+        ///
+        public string EmailValidation(string mail)
         {
-            this.inputs = inputs;
-        }
-        public string EmailValidation()
-        {
-            Regex regrex1 = new Regex(emailPattern);
+            Regex regrex1 = new Regex(emailPattern);//validating Pattern
             Console.WriteLine("Validating User Email ID : ");
             try
             {
-                if (inputs.ToLower().Equals(string.Empty))
+                bool result = regrex1.IsMatch(mail);//matching our input to pattern
+                if (result)
                 {
-                    throw new CustomException(CustomException.ExceptionType.EMPTY_TYPE_EXCEPTION, "Message should not be empty");
+                    Console.WriteLine(" It is --->" + "Valid");
+                    return "happy";
                 }
-                for (int i = 0; i < inputs.Length; i++)//validation Loop
+                else
                 {
-                    bool result = regrex1.IsMatch(inputs);
-                    if (result)
-                    {
-                        Console.WriteLine(inputs + " It is --->" + "Valid");
-                        return "happy";
-                    }
-                    else
-                    {
-                        Console.WriteLine(inputs + " It is --->" + "Invalid");
-                        return "sad";
-                    }
+                    Console.WriteLine(" It is --->" + "Invalid");
+                    return "sad";
                 }
-                return null;
-            }
-            catch (NullReferenceException)
-            {
-                throw new CustomException(CustomException.ExceptionType.INVALID_MOOD_EXCEPTION, "Message should not be null");
             }
             catch (Exception ex)
             {
-                return ex.Message;
+                Console.WriteLine(ex.Message);
+                return null;
             }
         }
-        public string NameValidation()
+        public string NameValidation(string name)
         {
-            Regex regrex2 = new Regex(namePattern);
+            Regex regrex2 = new Regex(namePattern);//validating Pattern
             Console.WriteLine("Validating User Email ID : ");
             try
             {
-                if (inputs.ToLower().Equals(string.Empty))
+                bool result = regrex2.IsMatch(name);//matching our input to pattern
+                if (result)
                 {
-                    throw new CustomException(CustomException.ExceptionType.EMPTY_TYPE_EXCEPTION, "Message should not be empty");
+                    Console.WriteLine(" It is --->" + "Valid");
+                    return "happy";
                 }
-                for (int i = 0; i < inputs.Length; i++)//validation Loop
+                else
                 {
-                    bool result = regrex2.IsMatch(inputs);
-                    if (result)
-                    {
-                        Console.WriteLine(inputs + " It is --->" + "Valid");
-                        return "happy";
-                    }
-                    else
-                    {
-                        Console.WriteLine(inputs + " It is --->" + "Invalid");
-                        return "sad";
-                    }
+                    Console.WriteLine(" It is --->" + "Invalid");
+                    return "sad";
                 }
-                return null;
-
-            }
-            catch (NullReferenceException)
-            {
-                throw new CustomException(CustomException.ExceptionType.INVALID_MOOD_EXCEPTION, "Message should not be null");
             }
             catch (Exception ex)
             {
-                return ex.Message;
+                Console.WriteLine(ex.Message);
+                return null;
             }
-
         }
-        public string MobileNumberValidation()
+
+        //}
+        public string MobileNumberValidation(string number)
         {
-            Regex regex3 = new Regex(mobilePattern);
+            Regex regex3 = new Regex(mobilePattern);//validating Pattern
             Console.WriteLine("Validating User Email ID : ");
             try
             {
-                if (inputs.ToLower().Equals(string.Empty))
+                bool result = regex3.IsMatch(number);//matching our input to pattern
+                if (result)
                 {
-                    throw new CustomException(CustomException.ExceptionType.EMPTY_TYPE_EXCEPTION, "Message should not be empty");
+                    Console.WriteLine(" It is --->" + "Valid");
+                    return "happy";
                 }
-                for (int i = 0; i < inputs.Length; i++)//validation Loop
+                else
                 {
-                    bool result = regex3.IsMatch(inputs);
-                    if (result)
-                    {
-                        Console.WriteLine(inputs + " It is --->" + "Valid");
-                        return "happy";
-                    }
-                    else
-                    {
-                        Console.WriteLine(inputs + " It is --->" + "Invalid");
-                        return "sad";
-                    }
+                    Console.WriteLine(" It is --->" + "Invalid");
+                    return "sad";
                 }
-                return null;
-
-            }
-            catch (NullReferenceException)
-            {
-                throw new CustomException(CustomException.ExceptionType.INVALID_MOOD_EXCEPTION, "Message should not be null");
             }
             catch (Exception ex)
             {
-                return ex.Message;
+                Console.WriteLine(ex.Message);
+                return null;
             }
 
         }
-        public string PassWordValidation()
+        public string PassWordValidation(string password)
         {
-            Regex regex3 = new Regex(PasswordPattern);
+            Regex regex3 = new Regex(PasswordPattern);//validating Pattern
             Console.WriteLine("Validating User Email ID : ");
             try
             {
-                if (inputs.ToLower().Equals(string.Empty))
+                bool result = regex3.IsMatch(password);//matching our input to pattern
+                if (result)
                 {
-                    throw new CustomException(CustomException.ExceptionType.EMPTY_TYPE_EXCEPTION, "Message should not be empty");
+                    Console.WriteLine(" It is --->" + "Valid");
+                    return "happy";
                 }
-                for (int i = 0; i < inputs.Length; i++)//validation Loop
+                else
                 {
-                    bool result = regex3.IsMatch(inputs);
-                    if (result)
-                    {
-                        Console.WriteLine(inputs + " It is --->" + "Valid");
-                        return "happy";
-                    }
-                    else
-                    {
-                        Console.WriteLine(inputs + " It is --->" + "Invalid");
-                        return "sad";
-                    }
+                    Console.WriteLine(" It is --->" + "Invalid");
+                    return "sad";
                 }
-                return null;
 
-            }
-            catch (NullReferenceException)
-            {
-                throw new CustomException(CustomException.ExceptionType.INVALID_MOOD_EXCEPTION, "Message should not be null");
             }
             catch (Exception ex)
             {
-                return ex.Message;
+                Console.WriteLine(ex.Message);
+                return null;
             }
 
         }
