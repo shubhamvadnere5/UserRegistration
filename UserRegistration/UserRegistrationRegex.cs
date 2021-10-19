@@ -13,7 +13,7 @@ namespace UserRegistration
     {
         //writing the valid pattern
         string pattern = "^[A-Z]{1}[a-z]{3,}$";
-        string[] inputs = { "shubh", "shubh?re", "Shubh96", "Shubham", "Shubhamvad@gmail.com", "CRETA", "sv" };//Validating some Example
+        string[] inputs = { "vadne", "Vad?re", "Vadner96", "Vadnere", "Shubhamvad@gmail.com", "CRETA", "sv" };//Validating some Example
 
 
         /// <summary>
@@ -22,7 +22,7 @@ namespace UserRegistration
         public void Validation()
         {
             Regex regex1 = new Regex(pattern);
-            Console.WriteLine("Validating First name: ");
+            Console.WriteLine("Validating Last name: ");
             ItarateLoop(inputs, regex1);
         }
         public void ItarateLoop(string[] arr, Regex regex1)
