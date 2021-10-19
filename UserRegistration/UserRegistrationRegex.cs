@@ -11,10 +11,10 @@ namespace UserRegistration
 /// </summary>
     class UserRegistrationRegex
     {
-
-        string pattern = "^[0-9]{2}[ ]*[0-9]{10}$";
+        string pattern = "^[a-zA-z]{8,}$";
         //writing the valid pattern
-        string[] inputs = { "903464352", "91 9834471126", "S792479017134", "56 740921740", "Bfg24124 Gk25125ajx", "abc@1.com", "Shubham" };//Validating some Example
+        string[] inputs = { "xvs52", "91 98scv8189", "V792479017134", "ShubhamERs", "56 740921740", "Bfjx", "abc@1.com", "ShAbhser" };//Validating some Example
+
 
         /// <summary>
         /// Validation this instance.
@@ -22,7 +22,7 @@ namespace UserRegistration
         public void Validation()
         {
             Regex regrex1 = new Regex(pattern);
-            Console.WriteLine("Validating User mobileNumber: ");
+            Console.WriteLine("Validating User Password: ");
             ItarateLoop(inputs, regrex1);
         }
         public void ItarateLoop(string[] arr, Regex regrex1)
