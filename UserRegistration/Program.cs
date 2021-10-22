@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace UserRegistration
 {
-    class Program
-    {
-        static void Main(string[] args)
+   
+        class Program
         {
-            UserRegistrationRegex user = new UserRegistrationRegex();
-            user.Validation();
-            Console.ReadLine();
+            static void Main(string[] args)
+            {
+                string inputs = "abc@yahoo.com";
+                Regex058assignment name = new Regex058assignment(inputs);
+                name.EmailValidation();
+                Console.ReadLine();
+            }
         }
     }
-}

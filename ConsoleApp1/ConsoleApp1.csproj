@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F4126B99-9B56-4FBB-9291-EAF5C1FFB360}</ProjectGuid>
+    <ProjectGuid>{10F636F0-6F42-4598-A863-DAA5A05DCE97}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>UserRegistration</RootNamespace>
-    <AssemblyName>UserRegistration</AssemblyName>
+    <RootNamespace>ConsoleApp1</RootNamespace>
+    <AssemblyName>ConsoleApp1</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,10 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomException.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Regex058assignment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
